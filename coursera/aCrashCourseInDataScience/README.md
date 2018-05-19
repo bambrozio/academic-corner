@@ -58,3 +58,5 @@ After completing this course you will know.
      - Graded: Defining Success in Data Science
      - Graded: Data scientist toolbox
      - Graded: Separating hype from value
+
+![Part Time Delivery Structure](http://www.dit.ie/media/computing/research/MSc%20Part%20Time%20Delivery%20Structure-641x354.png)
