@@ -1,2 +1,1 @@
-# dit
-# dit
+# Repository for academic content.
