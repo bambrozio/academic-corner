@@ -7,6 +7,7 @@
  - Start Date: September 2017
  - Location: College of Sciences and Health, DIT Kevin Street, Dublin 8
     - delivered by: [School of Computing](http://www.dit.ie/computing/)
+ - Notes: Goggle Drive: [MsC Computing (DA)](https://drive.google.com/drive/u/0/folders/0B-iNAJKscDsFTTZPeUlKbHVHOWM)
 
 ## Course Content
 
