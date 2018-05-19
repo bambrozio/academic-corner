@@ -57,3 +57,5 @@
     - Universal Design
     - Case Studies
     - Speech & Audio Processing
+
+![Part Time Delivery Structure](http://www.dit.ie/media/computing/research/MSc%20Part%20Time%20Delivery%20Structure-641x354.png)
