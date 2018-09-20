@@ -1,2 +1,2 @@
 # Content:
- - [MSc in Computing (Data Analytics)](../dit/MScDataAnalytics/README.md).
+ - [MSc in Computing (Data Analytics)](./dit/MScDataAnalytics/README.md).
