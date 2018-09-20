@@ -35,6 +35,7 @@
 
 ## Structure
 > Full details: http://www.dit.ie/computing/prospectivestudents/msc/structure/
+
  - (i) Critical Skills Core Modules common to all MSc in Computing specialisms
     - Research Writing & Scientific Literature
     - Research Methods and Proposal Writing
@@ -49,6 +50,7 @@
 - (iii) Option Modules
     > Students may also take Specialism Core Modules from other specialisms as Option modules, subject to scheduling.
     > A selection of option modules will be offered each year.  Option modules availability will be subject to a threshold minimum number of interested students.
+    
     - Geographic Information Systems
     - Programming for Big Data
     - Problem Solving, Communication and Innovation
