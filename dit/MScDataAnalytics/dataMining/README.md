@@ -19,4 +19,4 @@
 - Machine Learning (Theory + Methods)
     - Focuses on the algorithms, how these work, how they can be customised, how they can be tuned, finding or discovering how they can be used in new situations.
     - Machine Learning is only **one component**(*) of Data Mining. (And only one of the tools you can use for the Modeling / Predictive Analytics phase)
-    ![Data Mining Life Cycle](../img/dmLifeCycle.png)
+    ![Data Mining Life Cycle](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/dataMining/img/dmLifeCycle.png)
