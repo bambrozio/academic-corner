@@ -37,7 +37,7 @@
 > Full details: http://www.dit.ie/computing/prospectivestudents/msc/structure/
 
  - (i) Critical Skills Core Modules common to all MSc in Computing specialisms
-    - Research Writing & Scientific Literature
+    - Research Writing & Scientific Literaturepass
     - Research Methods and Proposal Writing
     - Research Project & Dissertation
  - (ii) Specialism Core Modules which vary depending on the specialism (Data Analytics)
