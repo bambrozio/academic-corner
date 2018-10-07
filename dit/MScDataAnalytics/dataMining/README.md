@@ -31,3 +31,25 @@
         - Finding applications areas
 
     ![Data Mining Life Cycle](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/dataMining/img/dmLifeCycle.png) ![Data Mining Workflow](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/dataMining/img/dmWorkFlow.png)
+
+
+## Lecture 4 - 09/10/2018
+> Text Mining – Part 2.
+> Opinion Mining / Sentiment Analysis.
+> Combining Text procession with Machine Learning.
+
+- Sentiment analysis or opinion mining.
+    - Computationalstudyofopinions, sentiments, evaluations, attitudes, appraisal, affects, views, emotions, subjectivity, etc., expressed in text.
+    - Reviews, blogs, discussions, news, comments, feedback,oranyother documents.
+- Terminology:
+    - Sentiment analysis is more widely used in industry.
+    - Opinion mining.
+- But they can be used interchangeably.
+- Natural language processing (NLP).
+    - It deals with the actual text element. It transforms it into a format that the machine can use.
+- Artificial intelligence.
+    - It uses the information given by the NLP and uses a lot of maths to determine whether something is negative or positive.
+- Tokenization
+    - is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens.
+- stop words
+    - are words which are filtered out prior to, or after, processing of natural language data (text).
