@@ -4,6 +4,8 @@ subtitle: "Correlation and Difference"
 author: "HTML"
 date: "28th September 2018"
 output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
