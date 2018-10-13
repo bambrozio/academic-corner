@@ -14,7 +14,55 @@
     - Statistica Inference
         - The science of Drawing statistical conclusions from specific data, using a knownkedge of probability.
 
-(WIP)
+- What is the module about:
+    - For the purposes of a Statistical Inquiry
+        - How to collect and prepare data for use
+        - How to describe the data (in terms of format and statistically)
+        - How to formulate, state, test and report on hypotheses
+        - How to conduct exploratory and predictive analytics
+        - How to use an appropriate software package 
+            - We will be using R
+        - How to report your findings correctly
+
+- How to succeed in the module
+    - Focus on learning the process of conducting a statistical analysis 
+        - What are you trying to discover or show?
+            - Figure out a question you are trying to answer/theory you are trying to test
+        - What data do you need to collect?
+        - Once you have data, how do you describe the data you have?  
+            - You need to explain this to whoever will be the consumer of your work
+        - What analysis should you conduct?
+            - You need to know the types of tests to run and how to explain this to your consumer
+        - How do you interpret your analysis?
+            - You need to know how to interpret the outcomes of the analysis and present these to your consumer
+        - How will you present your findings?
+        - Present the question you are interested in 
+            - In a way that makes sense to conduct a statistical analysis
+        - Inspect and prepare the data you have 
+            - To support a statistical analysis
+        - Describe the data you have
+            - In a way that your consumer can understand any constraints the data may put on your analysis
+        - Conduct a statistical analysis
+            - Using appropriate statistical tests
+        - Report on your statistical analysis
+            - In a way that makes sense for your consumer
+        - Interpret the outcomes of your statistical analysis
+            - Drawing appropriate conclusions
+        - Report on the findings of your statistical analysis
+            - In a way that makes sense for your consumer
+
+
+### Fundamentals
+- Types of Data Analysis
+    - Qualitative Methods
+        - Testing theories using language
+    - Quantitative Methods
+        - Testing theories using numbers (via statistics)
+    - statistical inquiry:
+        - science of collecting, analysing, and drawing conclusions from data
+        - science of collecting, describing, and interpreting data.
+        - objectively and quantitatively
+- ![The Research Process (Andy Field)](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/theResearchProcess.png)
 
 ---
 
