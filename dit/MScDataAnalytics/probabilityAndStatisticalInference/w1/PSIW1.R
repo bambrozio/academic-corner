@@ -71,7 +71,7 @@ meansal
 
 #Or use the print function to make it look the way you want
 
-print(meansal, digits=1)
+print(meansal, digits=7)
 
 #### Measures of Dispersion
 

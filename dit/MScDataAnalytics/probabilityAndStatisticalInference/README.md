@@ -62,7 +62,206 @@
         - science of collecting, analysing, and drawing conclusions from data
         - science of collecting, describing, and interpreting data.
         - objectively and quantitatively
-- ![The Research Process (Andy Field)](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/theResearchProcess.png)
+        - Is usually carried out with a SAMPLE
+- The Research Process (Andy Field)
+![The Research Process (Andy Field)](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/theResearchProcess.png)
+
+    - Inital Observation (Research Question)
+        - Data
+            - Find something that needs explaining
+            - Read other research
+            - Test the concept
+                - collect data that will provide evidence you can test to see if your idea is valid
+            - Define variables that can be measured and can differ across entities or time
+    - Generate Theory
+        - Theory: A hypothesized general principle or set of principles that explains known findings about a topic and from which new hypotheses can be generated. e.g. Computer Science attracts students with strong mathematical ability.
+    - Generate Hypotheses 
+        - Identify Variables.
+            - Hypotheses: A prediction from a theory. E.g. the number of people applying for an MSc in Computer Science will have basic mathematical ability greater than the general level in the population.
+            - Falsification: The act of disproving a theory or hypothesis.
+    - Collect Data to Test Theory
+        - Measure Variables
+            - What data am I interested in/do I need?
+                - Population: The entire set of individuals or objects of interest or the measurements obtained from all individuals or objects of interest
+                    - finite or infinite.
+                - Sample: A portion, or part, of the population of interest
+                    - Statistical inquiry is usually carried out with a SAMPLE
+                    - If Sample is not representative it is biased.
+                    - Factors influencing the accuracy of a sample’s ability to represent a population: size and randomness.
+                - Individuals: people or objects being studied
+                    - The set of data of an individua is referred to as a case.
+                - Variable: A characteristic about each individual.
+                    - Any characteristic whose value may change from one individual to another.
+                - Data: Value of a variable for individual observations.
+                - Dataset: The set of values collected for the variable(s) from each of the individuals belonging to the sample/population the dataset represents.
+                    - Each case in a dataset has one datum or observation for each variable.
+                - Experiment: A planned activity whose results yield a set of data.
+                - Parameter: A numerical value describing an aspect of an entire population.
+                    - For small populations it is possible to measure to compute a parameter
+                - Statistic: A numerical value describing an aspect of the sample.
+                    - For larger populations you will measure to compute a statistic
+        - Example: 
+        ```
+        A country is interested in learning about the average age of its academic staff working at third level.
+        The basic terms in this situation:
+
+        - The population is all academic members working in the country and we want to determine their age.
+        - A sample is any subset of that population.  
+            - For example, we might select 50 staff members and determine their age.
+            As long as this is representative and sufficiently large to model the population.
+        - The variable is the “age” of each staff member.
+        - One datum would be the age of a specific faculty member.
+        - The experiment would be the method used to select the ages forming the sample and determining the actual age of each staff member in the sample.
+        - The parameter of interest is the “average” age of all academic staff in the country.
+        - The statistic is the “average” age for all academic staff in the sample.
+        ```
+        - Biased Sampling Method:
+            - A sampling method that produces data which systematically differs from the population from which it is taken.  
+        - Aim for a Simple Random Sample
+            - A sample of n measurements from a population is a subset of the population selected in such a manner that every sample of size n from the population has an equal chance of being selected
+
+        - Data Collection: What to Measure? Eg.:
+        ```
+        Hypothesis: Consumption of Coca-Cola improves a student’s ability to concentrate.
+        Decide what variables you need.
+        Independent Variable:
+            - The proposed cause
+            - Predictor variable
+            - Manipulated variable (in experiments)
+            - Coca-Cola consumption in the hypothesis above
+        Dependent Variable:
+            - The proposed effect
+            - An outcome variable
+            - Measured not manipulated (in experiments)
+            - A student’s ability to concentrate in the hypothesis above
+        ```
+
+        - Qualitative, or Attribute, or Categorical, Variable
+            - A variable that categorizes or describes an element of a population.
+            - Identifies basic differentiating characteristics of the population.
+            > Note: Arithmetic operations, such as addition and averaging, are **not** meaningful for data resulting from a qualitative variable.
+        - Quantitative, or Numerical, Variable
+            - A variable that quantifies an element of a population.
+            - Observations or measurements take on numerical values
+            > Note: Arithmetic operations such as addition and averaging, are meaningful for data resulting from a quantitative variable.
+            - Discrete:
+                - Isolated points along a number line
+                - Usually counted
+                - Can only take certain values
+                - E.g. rolling a dice, #students attending class
+            - Continuous
+                - Variable that can be any value in a given range
+                - Usually measured
+                - E.g. heights of students attending class, time spent concentrating in class
+
+        - Levels of measurement
+            - Nominal
+                - Data can be assigned to a category
+            - Ordinal
+                - There is a ranking associated with the variable
+                - Data can be ordered from smallest to largest, best to worst etc.
+            - Interval
+                - Data can be ordered but there is meaning between the values of order
+                - Allows comparison between the data values
+            Ratio
+                - Data can be ordered, there are differences between the values and you can find the ratio 
+                - Has an absolute 0
+                - It makes sense to say for example one value is twice as large as another
+                - Interval and Ration may be referred to as Scale
+    - Analyse Data
+        - Graph Data
+        - Fit a Model
+        - Summarizing vs Analysing:
+            - Descriptive Statistics
+                - Describing the population and the sample
+                - Summarizing
+            - Inferential Statistics
+                - Inference from sample to population
+                - Inference from statistic to parameter
+            - Using the appropriate statistical tests to draw inference
+
+- Measure of Central Tendency
+    - A single number to serve as a representative value around which all the numbers in the set tend to cluster.
+- Mode: The value with the greatest frequency on the distribution.
+    - The mode is not a very useful measure of central tendency
+    - Two data sets that are very different from each other can have the same mode
+    - The mode is primarily used with nominal variables
+    - Eg.:
+        - 3, 7, 5, 13, 20, 23, 39, 23, 40, 23, 14, 12, 56, 23, 29
+        - In order these numbers are:
+        - 3, 5, 7, 12, 13, 14, 20, **23, 23, 23, 23**, 29, 39, 40, 56
+        - In this case the mode is **23**.
+
+- Median
+    - It is the score in the middle
+    - The middle score of a sequence of all the scores in a distribution arranged from lowest to highest.
+    - Eg.:
+        - Sort the data from highest to lowest
+        - Find the score in the middle
+            - middle = (N + 1) / 2 
+            - If N, the number of scores, is even the median is the average of the middle two scores
+        eg.: 
+            - 10   8   14   15   7   3   3   8   12   10   9
+            - Sort the scores:
+            - 15   14   12   10   10   9   8   8   7   3   3
+            - Determine the middle score:
+            - middle = (N + 1) / 2 = (11 + 1) / 2 = 6
+            - Middle score = median = 9
+        eg2:
+            - 24  18  19  42  16  12
+            - 42  24  19  18  16  12
+            - middle = (N + 1) / 2 = (6 + 1) / 2 = 3.5
+            - Median = average of 3rd and 4th scores:
+            - (19 + 18) / 2 = 18.5
+
+- The Mean
+    - The arithmetic average of a group of scores
+    - eg.:
+        - 1   5   4   3   2
+        - 1 + 5 + 4 + 3 + 2 = 15
+        - 15 / 5 = 3
+    - The mean is sensitive to extreme values 
+
+- Measures of Dispersion
+    - Descriptive statistics that describe how similar a set of scores are to each other (or the range of scores)
+        - The more similar the scores are to each other, the lower the measure of dispersion will be
+        - The less similar the scores are to each other, the higher the measure of dispersion will be
+        - In general, the more spread out a distribution is, the larger the measure of dispersion will be
+        - 3 main measures: 
+            - The range
+                - difference between the largest and smallest score in the set of data:
+                    - 4   8   1   6   6   2   9   3   6   9
+                    - XL=9; XS=1
+                    - Range = XL - XS = 8
+                - is used when mainly for ordinal data
+                - rarely used in scientific work
+                - Two very different sets of data can have the same range
+            - Variance / standard deviation
+                - Variance:
+                    - Concerned with deviations from the mean (X-µ)
+                    - the average of the **squared** differences from the mean
+                    - First subtract the mean from each of the scores  
+                        - This difference is called a deviate or a deviation score
+                        - The deviate tells us how far a given score is from the typical, or average, score
+                        - Thus, the deviate is a measure of dispersion for a given score
+                    - Then square the result
+                        - Because if we just added up the differences from the mean the negatives would cancel the positives
+                        - Also, If we used absolute values we wouldn’t get an accurate measure of spread
+                    - Variance is defined as the average of the deviations from the mean squared:
+                    ![The Research Process (Andy Field)](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/variance.png)
+                    
+
+            - The semi-interquartile range (SIR)
+            
+
+
+
+
+- Bimodal Distributions: 
+    - When a distribution has two “modes,” it is called bimodal
+- Multimodal Distributions
+    - If a distribution has more than 2 “modes,” it is called multimodal
+- 
 
 ---
 
