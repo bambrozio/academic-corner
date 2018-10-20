@@ -20,3 +20,11 @@ Looks like R simply does Q4 - Q2
 
 ---
 
+W2:
+ - About fish example. Following instructions of slides, Standard Deviation of `3, 4, 5, 6, 8, 10` is 6.8. But in R, i says 2.6:
+ ```
+ > sd(c(3, 4, 5, 6, 8, 10))
+ [1] 2.607681
+ ```
+ > only if I square it I will have 6.8. Why R doesn't complete the formula? Is it correct to assume that R `sd` formula returns the Variance instead?
+
