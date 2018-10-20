@@ -191,6 +191,10 @@
         - In order these numbers are:
         - 3, 5, 7, 12, 13, 14, 20, **23, 23, 23, 23**, 29, 39, 40, 56
         - In this case the mode is **23**.
+    - Bimodal Distributions: 
+        - When a distribution has two “modes,” it is called bimodal
+    - Multimodal Distributions
+        - If a distribution has more than 2 “modes,” it is called multimodal
 
 - Median
     - It is the score in the middle
@@ -239,29 +243,69 @@
             - Variance / standard deviation
                 - Variance:
                     - Concerned with deviations from the mean (X-µ)
-                    - the average of the **squared** differences from the mean
+                    - It's the **average** of the **squared** differences from the mean
                     - First subtract the mean from each of the scores  
-                        - This difference is called a deviate or a deviation score
+                        - This difference is called a **deviate** or a **deviation score**
                         - The deviate tells us how far a given score is from the typical, or average, score
                         - Thus, the deviate is a measure of dispersion for a given score
                     - Then square the result
                         - Because if we just added up the differences from the mean the negatives would cancel the positives
                         - Also, If we used absolute values we wouldn’t get an accurate measure of spread
                     - Variance is defined as the average of the deviations from the mean squared:
-                    ![The Research Process (Andy Field)](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/variance.png)
-                    
+                    ![Variance](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/variance.png)
+                    - N here is the **degrees of freedom**:
+                        - the number of independent pieces of information on which the estimate is based
+                - standard deviation
+                    - Standard deviation = **the square root of the Variance**
+                    - The standard deviation is the most useful and the most popular measure of dispersion. 
+                        - ** Used to calc margens of the mean. Eg: group is from (mean - SD) until (mean + SD)
+                    - Also helpful in comparing samples.
+                    - Greek symbol sigma **σ**
+                    - The larger the value the more spread out around the mean the data is, smaller means less spread.
+                    - The 68-95-99.7 Empirical Rule In the normal distribution with mean µ and standard deviation σ:
+                        - 68% of the observations fall within σ of the mean µ.
+                        - 95% of the observations fall within 2σ of the mean µ.
+                        - 99.7% of the observations fall within 3σ of the mean µ.
+                    - ** Eg.: If you compare 2 Data Sets with the same mean score for Probability and Statistics, it doesn't mean they will have the same performance, as SD may be diff.
+            - The Interquartile Range (IQR)
+                - the difference of the first (25th percentile) and third (75th percentile) quartiles divided by two
+                - **IQR = (Q3 - Q1) / 2**
+                - Eg: IQR of `2, 4, 6, 8, 10, 12, 14, 20, 30, 60`:
+                    - (25 - 5) / 2 = **10**
 
-            - The semi-interquartile range (SIR)
-            
+- Measure of Skew
+![Measure of Skew](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/skewMeasure.png)
+    - Skew is a measure of symmetry in the distribution of scores
+    - Normal distributions: mean = median = mode
+    - Positively skewed distributions: mean > median
+    - Negatively skewed distributions: mean < median
+- Kurtosis
+![Kurtosis](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/kurtosis.png)
+    - measures whether the scores are spread out more or less than they would be in a normal (Gaussian) distribution
+    - Distribution Normal == 3 == mesokurtic
+    - Distribution less spread == kurtosis > 3 == leptokurtic
+    - Distribution more spread == kurtosis < 3 == platykurtic
 
+- When to use Median & IQR:
+    - The median is often used when the distribution of scores is either positively or negatively skewed
+        - The few really large scores (positively skewed) or really small scores (negatively skewed) will not overly influence the median
+    - The IQR is often used with skewed data as it is insensitive to the extreme scores
+- Mean and Standard Deviation
+    - You should use the mean when
+        - the data are interval or ratio scaled
+            - Many people will use the mean with ordinally scaled data too
+        -  and the data are not skewed
+    - The mean is preferred because it is sensitive to every score
+    - If you change one score in the data set, the mean will change
+    - **If you use mean you also use standard deviation**
 
+ - **Key concepts:**
+    - Sample: Size, representativeness, extremes
+    Differing types of variable: nominal/categorical, ordinal, interval and ratio
+    Measures of central tendency: the mean, median and mode
+    Measures of dispersion: range, inter-quartile range, variance and standard deviation
+    Shape: normal, skew, kurtosis
 
-
-- Bimodal Distributions: 
-    - When a distribution has two “modes,” it is called bimodal
-- Multimodal Distributions
-    - If a distribution has more than 2 “modes,” it is called multimodal
-- 
 
 ---
 
