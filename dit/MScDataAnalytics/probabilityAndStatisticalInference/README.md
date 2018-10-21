@@ -327,6 +327,7 @@
     - Understanding Basic Statistics, Brase and Brase
 
  - Webcourses portal: Download content (Week 2): 
+
 ```
 File geoms.docx (843.268 KB)
 File PSIWeek2.R (6.032 KB)
@@ -659,6 +660,7 @@ PSIWeek2.R includes the R script for creating some graphs from the lecture.
     - SPSS Survival Manual, Julie Pallant
 
  - Webcourses portal: Download content (Week 3): 
+
 ```
 File PSIWeek3-Lecture.Rmd (6.118 KB)
 File Field-BDI-Non-parametric.dat (466 B)
@@ -676,6 +678,7 @@ PSI-Week3.rmd - R markdown file with all the commands used in the lecture + PSIW
 All the datafiles used in the lecture (both .dat and .sav formats)
 The specification for the practical class PSIWeek3Exercise.pdf (this uses the survey dataset from this week and the regression dataset from last week)
 I will be using R markdown from now on to provide you with the R code. A guide to getting started is available at https://rmarkdown.rstudio.com/lesson-1.html
+
 ```
 
 (WIP)
@@ -692,6 +695,7 @@ I will be using R markdown from now on to provide you with the R code. A guide t
     - SPSS Survival Manual, Julie Pallant
 
  - Webcourses portal: Download content (Week 4): 
+ 
 ```
 File experim.dat (3.964 KB)
 File Field-BDI-Non-parametric.dat (466 B)
