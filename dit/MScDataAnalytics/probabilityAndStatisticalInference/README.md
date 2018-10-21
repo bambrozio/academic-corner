@@ -646,8 +646,6 @@ PSIWeek2.R includes the R script for creating some graphs from the lecture.
         - To compare two or more histograms, use the same scale on the horizontal axis
         - Describe it as per example:
         - "The median number of hours spent watching TV per day was greater for the 1-year-olds than for the 3-year-olds. The distribution for the 3-year-olds was more strongly skewed right than the distribution for the 1-year-olds, but the two distributions had similar ranges."
-        
-
 
 ---
 
