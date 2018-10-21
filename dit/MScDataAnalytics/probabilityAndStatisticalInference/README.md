@@ -101,6 +101,7 @@
                 - Statistic: A numerical value describing an aspect of the sample.
                     - For larger populations you will measure to compute a statistic
         - Example: 
+
         ```
         A country is interested in learning about the average age of its academic staff working at third level.
         The basic terms in this situation:
@@ -115,12 +116,14 @@
         - The parameter of interest is the “average” age of all academic staff in the country.
         - The statistic is the “average” age for all academic staff in the sample.
         ```
+
         - Biased Sampling Method:
             - A sampling method that produces data which systematically differs from the population from which it is taken.  
         - Aim for a Simple Random Sample
             - A sample of n measurements from a population is a subset of the population selected in such a manner that every sample of size n from the population has an equal chance of being selected
 
         - Data Collection: What to Measure? Eg.:
+
         ```
         Hypothesis: Consumption of Coca-Cola improves a student’s ability to concentrate.
         Decide what variables you need.
@@ -678,7 +681,6 @@ PSI-Week3.rmd - R markdown file with all the commands used in the lecture + PSIW
 All the datafiles used in the lecture (both .dat and .sav formats)
 The specification for the practical class PSIWeek3Exercise.pdf (this uses the survey dataset from this week and the regression dataset from last week)
 I will be using R markdown from now on to provide you with the R code. A guide to getting started is available at https://rmarkdown.rstudio.com/lesson-1.html
-
 ```
 
 (WIP)
