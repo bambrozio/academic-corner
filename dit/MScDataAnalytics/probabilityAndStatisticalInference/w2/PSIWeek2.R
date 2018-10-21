@@ -4,6 +4,8 @@ library(reshape)
 library(plyr)
 library (Hmisc)
 
+setwd("~/workspace/github.com/bambrozio/academic-corner/dit/MScDataAnalytics/probabilityAndStatisticalInference/w2/probabilityAndStatisticalInference/w2")
+
 #-- Some Basics with ggplot
 #facebookNarcissim - data file from a study that looked at ratings of Facebook profile pictures
 #which were rated (on coolness, fashion, atrractiveness and galmour)

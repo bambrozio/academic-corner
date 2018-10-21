@@ -410,7 +410,7 @@ PSIWeek2.R includes the R script for creating some graphs from the lecture.
     - Lower quartile (Q1) is the median of the lower half of the data
     - Upper quartile (Q3) is the median of the upper half of the data
 
- - Which Descriptive Statistic to use? (*Key slide*)
+ - Which Descriptive Statistic to use? (***Key slide***)
     - Depends on measurement type and data dispersion
     - Interval or Ratio (Scale)
         - Normally distributed
@@ -563,7 +563,12 @@ PSIWeek2.R includes the R script for creating some graphs from the lecture.
         - Non normal distribution
     - Always start by looking at the data!
 
-- *outcome<sub>i</sub>=(model)+error<sub>i</sub>*
+- Population
+    - The collection of units (be they people, plankton, plants, cities, suicidal authors, etc.) to which we want to generalize a set of findings or a statistical model
+- Sample
+    - A smaller (but hopefully representative) collection of units from a population used to determine truths about that population
+
+- ***outcome<sub>i</sub>=(model)+error<sub>i</sub>***
     - In statistics we fit models to our data 
     - The mean is a hypothetical value 
         - As such, the mean is simple statistical model.
@@ -586,7 +591,62 @@ PSIWeek2.R includes the R script for creating some graphs from the lecture.
             - This is the standard deviation (s).
         - **Standard Deviation**
             - ![SD Formula](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/sdFormula.png)
-            
+
+- Important to remember:
+    - The sum of squares, variance, and standard deviation represent the same thing:
+    - The ‘fit’ of the mean to the data
+    - The variability in the data
+    - How well the mean represents the observed data
+    - Error
+
+- Standard error of the mean (SE)
+    - **When you calculate the Standard Deviation of sample means
+        - means of many samples of the same Population, in order to estimate the mean of the entire population
+    - Central Limit Theorem
+        - As samples get large, the sampling distribution has a normal distribution with a sample mean equal to the population mean and a standard deviation of
+            - ***σ<sub>x̅</sub>=S / √N̅***
+        - We can use the standard deviation of the sampling distribution as the approximation of the sample error
+            - If our distribution follows the normal distribution
+
+- Confidence Intervals (CI)
+    - CI represents a range of values between which we think a population value will fall
+    - Eg.: Suppose we are looking at our fish in Lough Mask
+        - True mean: 15 thousand fish
+        - Sample mean: 17 thousand fish
+        - Interval estimate: 
+            - 12 to 22 thousand(contains true value)
+            - 16 to 18 thousand (misses true value)
+            - CIs constructed such that 95% contain the true value.
+    - Typically look at 95% CI but can also look at 99%
+    - What does  this mean?
+        - If we say CI is 95% then if we collected 100 samples, calculated the mean 
+        - Then a CI of 95% means we are confident that 95 of these would contain the true mean
+    - How to calculate?
+        - Need to know the limits within which 95% of the means fall
+        - Go back to the normal distribution – 95% of scores fall between  +-1.96 
+        - Once we know the mean and standard deviation we can calculate any score and therefore the CI
+            - Lower boundary: ***X̅=1−SE***
+            - Upper boundary: ***X̅= 1+SE***
+
+- Graphical presentation: (***Key slide***)
+    - Nominal or Ordinal: 
+        - Bar charts, Pie charts or Frequency Tables
+    - Interval or Ratio numerical: 
+        - Histogram, Stem and Leaf  diagrams or Box-plot 
+            - Depending on dispersion
+
+    - Stem-and-Leaf plot
+        - Shows data arranged by place value. 
+        - You can use a stem-and-leaf plot when you want to display data in an organized way that allows you to see each value.
+            - Use for small to moderate sized data sets.
+        - Accompany with a comment on the centre, spread, and shape of the distribution and if there are any unusual features.
+
+    - Histogram
+        - Use for univariate numerical data (one variable)
+        - To compare two or more histograms, use the same scale on the horizontal axis
+        - Describe it as per example:
+        - "The median number of hours spent watching TV per day was greater for the 1-year-olds than for the 3-year-olds. The distribution for the 3-year-olds was more strongly skewed right than the distribution for the 1-year-olds, but the two distributions had similar ranges."
+        
 
 
 ---
