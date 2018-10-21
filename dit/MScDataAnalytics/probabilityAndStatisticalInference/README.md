@@ -460,7 +460,7 @@ PSIWeek2.R includes the R script for creating some graphs from the lecture.
     - If we flip a coin two times, what is the probability that the coin flips would result in one or fewer heads? Cumulative probability: 
         - `P(X < 1) = P(X = 0) + P(X = 1) = 0.25 + 0.50 = 0.75`
     
-    | Number of heads(X)    | Probability:P(X = x) | Cumulative Probability:P(X < x) | 
+    | Number of heads(X)    | Probability: P(X = x) | Cumulative Probability: P(X < x) | 
     | :---:                 | :---:                | :---:                           |
     | 0                     | 0.25                 | 0.25                            |
     | 1                     | 0.50                 | 0.75                            |
@@ -695,7 +695,7 @@ I will be using R markdown from now on to provide you with the R code. A guide t
     - SPSS Survival Manual, Julie Pallant
 
  - Webcourses portal: Download content (Week 4): 
- 
+
 ```
 File experim.dat (3.964 KB)
 File Field-BDI-Non-parametric.dat (466 B)
