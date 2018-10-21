@@ -510,22 +510,83 @@ PSIWeek2.R includes the R script for creating some graphs from the lecture.
                 ![Z-Score Example 1](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/zScoreExample1.png)
                 - z-scores enable us to determine the relationship between one score and the rest of the scores, using just one table for all normal distributions.
                 - Eg 2: If we have 480 scores, normally distributed with a mean of 60 and an SD of 8, how many would be 76 or above?
-                ![Z-Score Example 2](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/zScoreExample2.png)
-                - Work out the z-score for 76:
-                - *z = (X - x̅) / s = (76 - 60) / 8 = 16 / 8 = 2.00*
-                - We need to know the size of the area beyond z.
-                - Looking at the table, we find 
-                
-                | Z     | (a) Area btw Mean and Z | (b) Area beyond Z |
-                | :---: | :---:                   | :---:             |
-                | 2.00  | 0.4772                  | 0.0228            |
+                    ![Z-Score Example 2](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/zScoreExample2.png)
+                    - Work out the z-score for 76:
+                    - *z = (X - x̅) / s = (76 - 60) / 8 = 16 / 8 = 2.00*
+                    - We need to know the size of the area beyond z.
+                    - Looking at the table, we find 
+                    
+                    | Z     | (a) Area btw Mean and Z | (b) Area beyond Z |
+                    | :---: | :---:                   | :---:             |
+                    | 2.00  | 0.4772                  | 0.0228            |
 
-                ![Z-Score Example Table](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/zScoreExample2table.png)
+                    ![Z-Score Example Table](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/zScoreExample2table.png)
 
-                - So: as a proportion of 1, 0.0228 of scores are likely to be 76 or more.
-                - As a percentage, = 2.28%
-                - As a number,  0.0228 * 480  = 10.94 scores.
-                
+                    - So: as a proportion of 1, 0.0228 of scores are likely to be 76 or more.
+                    - As a percentage, = 2.28%
+                    - As a number,  0.0228 * 480  = 10.94 scores.
+                - Eg 3: Word comprehension test scores:
+                    - Person with no brain damage: no. correct: mean = 92, SD = 6 out of 100
+                    - Brain-damaged person: no. correct: 89  out of 100.
+                    - Is this person's comprehension significantly impaired?
+                    - Step 1: Graph the problem:
+                    ![Z-Score Example 3](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/zScoreExample3.png)
+                    - Step 2: Convert 89 into a z-score:
+                        - *z = (89 - 92)/6 =  - 3/6  = -0.5*
+                    - Step 3: use the table to find the "area beyond z" for our z of - 0.5:
+                        - Area beyond z = 0.3085
+                    - **Conclusion**: .31 (31%) of people without brain damage are likely to have a comprehension score this low or lower.
+
+- The Normal Distribution
+    - Normal Curve, Bell-shaped Curve or Gaussian distribution
+    - It's symmetrical around the mean.
+    - The mean, median and mode all have same value.
+    - It can be specified completely, once mean and SD are known.
+    - The area under the curve is directly proportional to the relative frequency of observations.
+        - Thus we can calculate the probability of observations occurring in a population
+    The Empirical Rule
+    - 68% of the observations fall within σ of the mean µ.
+    - 95% of the observations fall within 2σ of the mean µ.
+    - 99.7% of the observations fall within 3σ of the mean µ.
+    ![SD Empirical Rule](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/sdEmpiricalRule.png)
+    - Z-Score properties:
+        - 1.96 cuts off the top 2.5% of the distribution.
+        - −1.96 cuts off the bottom 2.5% of the distribution.
+        - As such, 95% of z-scores lie between −1.96 and 1.96.
+        - 99% of z-scores lie between −2.58 and 2.58,
+        - 99.9% of them lie between −3.29 and 3.29. 
+
+- Distribution is central to choosing the correct test
+    - Parametric Tests
+        - Normal distribution
+    - Non-parametric Tests
+        - Non normal distribution
+    - Always start by looking at the data!
+
+- *outcome<sub>i</sub>=(model)+error<sub>i</sub>*
+    - In statistics we fit models to our data 
+    - The mean is a hypothetical value 
+        - As such, the mean is simple statistical model.
+    - How can we assess how well the mean represents reality?
+        - Calculating ‘Error’:
+            - ***deviation** = x<sub>i</sub> - x̅*
+            Total Error: (sum the deviations)
+                - *Σ(x<sub>i</sub> - x̅)*
+                - We could add the deviations to find out the total error.
+                - Deviations cancel out because some are positive and others negative. 
+                - Therefore, we square each deviation. 
+                - *SS=Σ(x<sub>i</sub> - x̅)<sup>2</sup>*
+        - **Variance:**
+            - The sum of squares is a good measure of overall variability, but is dependent on the number of scores.
+            - We calculate the average variability by dividing by the number of scores (n).
+            - This value is called the variance (s2).
+            - *variance(s<sup>2</sup>) = SS/N-1 = Σ(x<sub>i</sub> - x̅)<sup>2</sup>/N-1*
+            - The variance has one problem: it is measured in units squared.
+            - This isn’t a very meaningful metric so we take the square root value (measured in units).
+            - This is the standard deviation (s).
+        - **Standard Deviation**
+            - ![SD Formula](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/sdFormula.png)
+            
 
 
 ---
