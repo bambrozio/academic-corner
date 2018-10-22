@@ -614,6 +614,8 @@ PSIWeek2.R includes the R script for creating some graphs from the lecture.
 
 - Confidence Intervals (CI)
     - CI represents a range of values between which we think a population value will fall
+    - Compute the mean of a sample in order to estimate the mean of the population. 
+        - Clearly, if you already know the population mean, there would be no need for a Confidence Interval.
     - Eg.: Suppose we are looking at our fish in Lough Mask
         - True mean: 15 thousand fish
         - Sample mean: 17 thousand fish
@@ -631,6 +633,7 @@ PSIWeek2.R includes the R script for creating some graphs from the lecture.
         - Once we know the mean and standard deviation we can calculate any score and therefore the CI
             - Lower boundary: ***X̅=1−SE***
             - Upper boundary: ***X̅= 1+SE***
+                - *X̅ = population mean, SE = standard error of the mean*
 
 - Graphical presentation: (***Key slide***)
     - Nominal or Ordinal: 
@@ -683,7 +686,149 @@ The specification for the practical class PSIWeek3Exercise.pdf (this uses the su
 I will be using R markdown from now on to provide you with the R code. A guide to getting started is available at https://rmarkdown.rstudio.com/lesson-1.html
 ```
 
-(WIP)
+- Correlation. We are interested in:
+    - Direction
+        - Positive or negative
+        - Slope of the line
+    - Strength (Weak/Moderate/Strong)
+        - How close are the data points to the line
+            - Very close = strong
+            - Very dispersed = weak
+            - Values closer to +1 or  -1 indicate stronger relationship
+    - Statistical Significance
+        - Likelihood the relationship we observe is occurring due to chance
+
+- Scatterplots. When to use:
+    - Bivariate numerical data (two variables)
+    - Plot the relationship between two variables 
+        - One independent (X - horizontal scale), one dependent (Y - vertical scale)
+    - Collection of ordered pairs
+    - Linear trend:
+    - ![Linear Scatterplots](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/scatterplotsLinear.png)
+    > Also can be curved
+
+- Positive Correlation:
+    - Both Y and X cordinates increase
+    - This means they are related
+    - eg.: age and height. As the child gets older, the child gets taller.
+- Negative Correlation: 
+    - One of the cordinates (Y or X) increases while the other one decreases.
+    - It does make a downhill graph.
+    - This means the two are related as opposites.
+    - eg.: age of a car and its value. As the car gets older, the car is worth less.
+- Constant Correlation:
+    - ** One of the cordinates doesn't change. 
+- No Correlation
+    - If there seems to be no pattern, and the points looked scattered, then it is no correlation.
+    - Eg.: If you look at hair colour of boots a premier league footballer wears and their scoring average, you will find that there is no correlation between the two.
+
+- Eg.: children’s maths scores at age 16 and their achievement of a standard maths test at aged 7. We are interested to see if the score a child achieves at age 7 is related to the score they achieve at age 16.
+- ***y = b0 + bx + e***
+    - ![Scatterplots eg1](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/scatterplotsEg1.png)
+    - `b0` is the intercept or the point where the line crosses the y-axis (y value when x=0).
+        - `b0` is the gradient of the line 
+        - Represents the amount that the outcome variable changes for one unit change in the independent variable. e.g. for every one percentage point increase in a child’s Maths Test score, the line suggests that the child’s GCSE Score increases  by ‘b’ points.
+    - `e` is basically the vertical distance between each point and the line itself.
+        - Model is a best fit.
+        `e` obviously varies. Without any further information about confounding variables we cannot explain this variation – so we include it as an error.
+- ***y = b0 + bx***
+    - if we are dealing with a **normal distribution** these error terms will cancel each other out and we do not need to include it in the equation.
+
+- Eg of looking at Co-variation:
+    - Nutrition and growth
+    - Pollen and bees
+    - Violence on TV and violence in Society?
+
+    - Parametric
+        - Make assumptions about the population from which the sample is taken
+        - Shape of the population (normally distributed)
+        - Eg.: Pearson’s Correlation
+        - **Normality:** Scores should be normally distributed
+            - Inspect histograms for each variable
+        - **Linearity:** There must be a linear relationship between the two variables
+            - Inspect a scatterplot and you should see a straight line not a curve
+        - **Homoscedasticity:** Variability of variable 1 should be similar to variable 2 
+            - Check scatterplot. Looking at distance between the points to that straight line. The shape of the scatterplot should be tube-like or rectangular in shape. If the shape is cone-like, then homoscedasticity would not be met.
+            - It is a matter of degree
+            - **heteroscedasticity**: When doesn't make sense to base any prediction in an homoscedasticity relationship. Eg.: income levels and spending on gadgets:
+                - Strong relationship with income and spending.
+                - But pattern graphically shows levels of spend low for low incomes and varies for those with high incomes. Therefore have heteroscedasticity which means that it doesn’t make sense to base any prediction based on this relationship
+                - ![homoscedasticity Vs Heteroscedasticity](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/homoVsHeteroscedasticity.png)
+
+    - Non-parametric
+        - Do not make assumptions about the population and its distribution
+        - Tolerant set of tests which don’t expect your data to anything fancy
+            - Not high-powered and don’t promise more than they can deliver
+            - May fail to detect differences that exist 
+        - Use for nominal or ordinal data 
+        - Use for small samples 
+        - Use for skewed data
+        - Eg.: Spearman Rank Order Correlation
+
+- Measuring Relationships
+    - We assess the relationship via the **correlation coefficient** and by calculating the **Covariance**.
+        - We look at how much each score deviates from the mean.
+        - If both variables deviate from the mean by the same amount, they are likely to be related.
+    - We can look at a bi-variate correlation or a partial correlation
+    - **Bi-variate:** two variables
+    - **Partial:** two variables while controlling for another
+    
+- Modeling Relationships
+    - First, look at some scatterplots of the variables that have been measured:
+        - *Outcome<sub>i</sub> = (model) + error*
+        - *Outcome<sub>i</sub> = (bX<sub>i</sub> ) + error*
+    - Strength of relationships
+    - ![Scatterplots Strengh](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/scatterplotsStrengh.png)
+
+- Detrended Q-Q Plot
+    - The horizontal line at the origin represents the quantiles that we would expect to see if the data were normal; 
+    - The dots represent the *magnitude* and *direction* of deviation in the observed quantiles. 
+    - Each dot is calculated by subtracting the expected quantile from the observed quantile. (This implies that if a dot is below the trend line on the Normal **Q-Q plot**, it will appear above the trend line on the Detrended Normal Q-Q plot, because observed - expected > 0.)
+- Inspect a Scale Variable: 
+    - Generate summary statistics
+    - Make sure you include skewness and kurtosis
+    - Generate a histogram with a normal curve showing
+    - Generate a Q-Q plot
+    - Review your statistics and plots to see how far away from normal your data is
+
+- Tests of Normality
+    - Estimates vary significantly from zero?
+    - Look at the standard error of skewness and kurtosis. 
+    - Is the value of ‘zero’ is within the 95% Confidence Interval (CI)?
+    - Standardised scores (value/std.error) for skewness between -2 and +2 are considered acceptable in order to prove normal univariate distribution. 
+    - Tpcois: 
+        - Standardised Skew = -.401/.118=-3.40 Standardised Kurtosis=.257/.236=1.08
+    - Skewnees is not acceptable
+        - Look at the outliers, how many of them there are or whether we can transform it to become more normal.
+
+- So our data has failed the standardised skew. Does this mean we can’t use parametric tests?
+    - No! Do some additional checks: (*see [PSIWeek3-Lecture.Rmd](./w3/PSIWeek3-Lecture.Rmd)*)
+        1. create a histogram to see how much skew there is.
+        1. Convert the raw score for tpcoiss to a standardised score.
+            - If 95% of our data falls within +/- 1.96 then we can treat the data as normal.
+        1. sort it,. In R: `scale(survey$tpcoiss)`
+            - will sort a list in ascending order.
+        1. Check your Q-Q Plot
+        1. Check skewness and kurtosis standardised scores
+        1. Check impact of outliers
+            - At 0.05 level if 95% of your data is within +/- 1.96 when converted to standardised scores – it is likely your data is safe to treat as normal
+            - If the sample size is small (80 or fewer cases), a case is an outlier if its standard score is ±2.5 or beyond.
+            - If the sample size is larger than 80 cases, a case is an outlier if its standard score is ±3.29 or beyond
+        1. Pearson Correlation: Look at the distribution of both variables
+            - Create a scatterplot
+            - Look at outliers
+            - Look at distribution of the data points
+            - Run the correlation
+            - Interpret the output
+            - Check the information you have been given about the sample
+            - Determine the direction of the relationship
+            - Determine the strength of the relationship
+            - Calculate the coefficient of determination 
+            - Assess the significance level
+- Correlation Analysis
+![Correlation Analysis](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/correlationAnalysis.png.png)
+
+
 
 ---
 

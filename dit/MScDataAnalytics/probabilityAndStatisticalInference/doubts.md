@@ -28,3 +28,7 @@ W2:
  ```
  > only if I square it I will have 6.8. Why R doesn't complete the formula? Is it correct to assume that R `sd` formula returns the Variance instead?
 
+---
+
+W3: 
+ - Can you help clarifying th diff btw Pearson and Spearman correlation?

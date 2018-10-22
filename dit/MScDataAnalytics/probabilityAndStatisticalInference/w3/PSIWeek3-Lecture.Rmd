@@ -24,13 +24,13 @@ knitr::opts_chunk$set(echo = TRUE)
 #http://spss.allenandunwin.com.s3-website-ap-southeast-2.amazonaws.com/data-files.html#.Wb0vvnWP-po
 #Results on a survey on well being
 #We need to load the file so that we can use it in R.
-survey <- read.table("C:/tempR/survey.dat")
+survey <- read.table("survey.dat")
 #Setting the column names to be that used in the dataset
 colnames(survey) <- tolower(colnames(survey))
 
 #Inspecting the data
 #Remember to install these packages if you haven't already done so
-
+install.packages("pastecs")
 library(pastecs) #For creating descriptive statistic summaries
 library(ggplot2) #For creating histograms with more detail than plot
 library(psych) # Some useful descriptive functions
