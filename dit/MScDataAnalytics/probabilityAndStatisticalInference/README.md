@@ -257,7 +257,7 @@
                         - Also, If we used absolute values we wouldn’t get an accurate measure of spread
                     - Variance is defined as the average of the deviations from the mean squared:
                     ![Variance](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/variance.png)
-                    - N here is the **degrees of freedom**:
+                    - N here is the **degrees of freedom (DF)**:
                         - the number of independent pieces of information on which the estimate is based
                 - standard deviation
                     - Standard deviation = **the square root of the Variance**
@@ -828,7 +828,174 @@ I will be using R markdown from now on to provide you with the R code. A guide t
 - Correlation Analysis
 ![Correlation Analysis](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/correlationAnalysis.png.png)
 
+- Things to know about the Correlation Co-efficient (***Key slide***)
+    - It varies between -1 and +1
+        - `0` = no relationship
+    - It is an effect size (ignore sign for magnitude of effect)
+        - `±.1` = small/weak
+        - `±.3` = medium/moderate
+        - `±.5` = large/strong
+        - Cohen’s effect size heuristic is standard
+            - Find a book that is respected in your field that discusses this  and cite it when stating you used Cohen’s convention
+        - Coefficient of determination, r2
+            - By squaring the value of r you get the proportion of variance in one variable shared by the other.
+        - Significance of all co-efficient and covariance depends on the p-value (significance value of the test)
 
+- Reporting a Pearson correlation in words:
+    - “The relationship between Total PCOISS (derived from the PCOISS questionnaire) and Total Perceived Stress (derived from the perceived stress questionnaire) was investigated using a Pearson correlation.   A strong negative correlation was found (r =-.580, n=424, p<.001).”
+
+        > **NOTE1:** 
+            Because the significance is  .000 in test results, the convention is to report it as <.001 </p>
+        > **NOTE2:**
+            N=424 because it does not include missing values
+
+- Covariance
+    - Variance tells us by how much scores deviate from the mean for a single variable.
+    - Covariance = Scaled version of variance.
+    - The covariance is the average cross-product deviations:
+        1. Calculate the error between the mean and each observations score for the first variable (x).
+        1. Calculate the error between the mean and their score for the second variable (y).
+        1. Multiply these error values.
+        Add these values and you get the cross product deviations.
+    - It depends upon the units of measurement.
+        - E.g. The Covariance of two variables measured in Miles might be 4.25, but if the same scores are converted to Km, the Covariance is 11.
+    - One solution: standardise it!
+        - The standardised version of Covariance is known as the **Correlation coefficient**.
+            - Divide by the standard deviations of both variables.
+            - Create standardised scores
+        
+- Hypothesis Testing
+    - Hypothesis may concern an effect (e.g. correlation) in the population or a difference between groups in a population.
+    - The general goal of a hypothesis test is to rule out chance (sampling error) as a plausible explanation for the results from a research study.  
+    - All hypothesis testing starts with the null hypothesis : that there is no effect or difference in the population.
+- Hypothesis statement
+    - The null hypothesis, denoted by H<sub>0</sub>, is a claim about a population characteristic that is initially assumed to be true.
+    - The alternative hypothesis, denoted by H<sub>a</sub>, is the competing claim.
+        - You are usually trying to determine if this claim is believable.
+    - The hypothesis statements are ALWAYS about the population. NEVER about a sample!
+- The Form of Hypotheses
+    - **H<sub>0</sub>**: population characteristic = hypothesized value
+        - The null hypotesis ALWAYS includes the `equal` case
+        - "hypothesized value" is a specific number determined by context of the problem
+    - **H<sub>1</sub>**: population characteristic > hypothesized value
+        - Uses the same "population characteristic" and "hypothesized value"
+        - The `>` is determined by context of the problem
+    - **H<sub>2</sub>**: population characteristic < hypothesized value
+        - Both H<sub>1</sub> and H<sub>2</sub> are considered **one-tailed tests**, becouse it shows interst in one direction ( `>` and `<` )
+    - **H<sub>3</sub>**: population characteristic ≠ hypothesized value
+        - Considered **two-tailed tests**, becouse it shows interst in both directions (`≠`)
+- When you perform a hypothesis test you make a decision:
+    - reject H<sub>0</sub> or fail to reject H<sub>0</sub>
+    - (***Key slide***) Each could possibly be a wrong decision; therefore, there are two types of errors:
+        - Type I:
+            - The error of rejecting H<sub>0</sub> when H<sub>0</sub> is true
+            - The probability of a Type I error is denoted by `α` (Alpha).
+                - `α` is called the significance level of the test.
+        - Type II: 
+            - The error of failing to reject H<sub>0</sub> when H<sub>0</sub> is false
+            - The probability of a Type II error is denoted by `β` (Beta).
+    
+| | H<sub>0</sub> is true | H<sub>0</sub> is false |
+| :---: | :---: | :---: |
+| Reject H<sub>0</sub> | `Type I error` | Correct |
+| Fail to reject </br>Reject H<sub>0</sub> | Correct | `Type II error` |
+
+- **P-value**, `α` – statistical significance (***Key slide***)
+    - A probability measure of evidence about H<sub>0</sub>. 
+    - Put simply it is the probability, given the null hypothesis is true, that the results could have been obtained purely on the basis of chance alone.
+    - The probability (under presumption that H<sub>0</sub> true) the test statistic equals observed value or value even more extreme predicted by H<sub>α</sub>
+    - The **P-value** allows us to answer the question: 
+        - Do our sample results allow us to reject H<sub>0</sub> in favour of H<sub>α</sub>?
+        - If that probability (p-value) is small, it suggests the observed result cannot be easily explained by chance.
+
+- Statistical Significance (***Key slide***)
+    - Working with random samples can never have 100% certainty that findings we derive from the sample will reflect real differences in the population as a whole. 
+    - Convention is that (for your field of study) there is an accepted level of probability such that it is considered so small that the finding from your sample is unlikely to have occurred by chance or sampling error.
+    - Normally, that line is drawn at `p=0.05` or `p=0.01`. 
+        - In other words, when a statistical test tells us that the finding has less than a 5% or 1% chance of occurring due to sampling error then we tend to conclude that we can be sufficiently confident that the finding is therefore likely to reflect a ‘real’ characteristic of the population as a whole. 
+    - When this occurs, you can say that your finding is **statistically significant**.
+- Statistical Significance
+    - A range of statistical tests can be used
+        - Each will tell you how likely it is that a finding you get from your sample would occur simply by chance if no such difference actually existed in the population as a whole
+        ie. the probability that your finding is simply a fluke occurrence deriving from the random selection of your sample.
+
+- Hypothesis test
+    - Using the standard level accepted by your domain (e.g. p ≤0.05 or p ≤0.01)
+    - If the probability less than this value then you reject the null hypothesis and thus accept the alternative hypothesis and you can state that your findings are **statistically significant**.
+    - If the probability is greater this value then you conclude that there is no evidence to reject the null hypothesis and your findings are not **statistically significant**.
+        - N.B  This is different from concluding that you have evidence to accept the null hypothesis. In these cases, your findings are said to be **not significant**.
+    - *Caveat:* If we get a p-value of 0.051 should we accept the null hypothesis? Should we reject the null hypothesis if we get a p-value of 0.049?
+        - Need to allow for some flexibility in interpretation.
+
+- Accepting and Rejecting Hypotheses (***Key slide***)
+    - A non-statistically significant test result does not mean that the null hypothesis is true
+    - A significant result does not mean that the null hypothesis is false
+
+- Correlation and Causality
+    - The third-variable problem:
+        - Causality between two variables cannot be assumed because there may be other measured or unmeasured variables affecting the results.
+
+- Spearman (Non-parametric)
+    - Doesn’t require normality
+    - Requires independent observations
+    - Use when assumptions of Pearson are violated or when data is not scale
+    - Spearman - Requires a monontonic relationship – as one variable increases, so does the other or as one increases the other decreases
+
+![Spearman (Non-parametric)](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/spearman.png)
+> Spearman's `Rho` is the statistic in R (aka **r<sub>s</sub>** or the Greek letter **ρ**) </br>
+> Kendall's `Tau` is the statistic in R (aka **tau-b** or **τ<sub>b</sub>**)
+
+- Tests for Group Comparison
+
+| | Independent Samples | Related Samples |
+|:---:|:---:|:---:|
+| Interval measures/ parametric | Independent samples t-test* | Paired samples t-test** |
+| Ordinal/ non-parametric | Mann-Whitney U-Test | Wilcoxon test |
+ >\* 2 different groups of participants</br>
+ >\*\* 2 same participants measured at two different points
+
+- Parametric: t-tests
+    - Compare the mean between 2 samples/groups/conditions
+        - If 2 samples are taken from the same population, then they should have fairly similar means 
+        - if 2 means are statistically different, then the samples are likely to be drawn from 2 different populations, i.e. they really are different
+
+- t Distribution
+    - Similar to the Z distribution by assuming normality.
+    - Normality is obtained after about 120 data observations.
+        - In which case t = z 
+    - Basic rule of parameter estimation: 
+        - The higher the observations (N) of sample the more reflective of overall population.
+    - The t distribution is a short, fat relative of the normal. 
+    - The shape of t depends on its degrees of freedom. 
+    - As N becomes infinitely large, t becomes normal and becomes z
+    - Only need to check if your sample is smaller than 120
+        - [See table](https://www.easycalculation.com/statistics/t-distribution-critical-value-table.php)
+    - Test statistic: 
+        - Difference between the means divided by the pooled standard error of the mean
+            - **t=(X̅<sub>1</sub>–X̅<sub>2</sub>)/(S<sub>X̅<sub>1</sub>–X̅<sub>2</sub></sub>)**
+            > Reporting convention: t= 11.456,  df= 9,  p< 0.001 (Remember df depends on the number in your sample) 
+    - Both the independent t-test and the dependent t-test are parametric tests based on the normal distribution. 
+        - Data are measured at least at the interval level.
+        - The sampling distribution is normally distributed. 
+        - In the dependent t­-test this means that the sampling distribution of the differences between scores should be normal, not the scores themselves.
+    - Eg.: 
+        - Dataset created from a designed to explore the factors that impact on respondents’ psychological adjustment and wellbeing.
+        - *Question:* Is there a significant difference in the mean self-esteem scores for males and females?
+        - *Need:* One categorical variable (male/female gender)
+        One continuous, dependent variable (self-esteem score tslfest)
+        - *T-test:* Will tell you whether there is a statistically significant difference between the mean scores of the groups
+            - We need to know the homogeneity of variance in advance so we can set the parameter on the t-test so we conduct the **Levene’s test**
+                - Levene’s test is the most robust test for normally distributed data
+                - (Fligner-Killeen test is a non-parametric test equivalent.)
+
+- Mann-Whitney test
+    - It is used to test the null hypothesis that two samples come from the same population (i.e. have the same median) or, alternatively, whether observations in one sample tend to be larger than observations in the other.
+    - Compares the medians from two populations and works when the Y variable is continuous and the X variable is discrete with two attributes. 
+        - Of course, the Mann-Whitney test can also be used for normally distributed data, but in that case it is less powerful than the 2-sample t-test.
+
+- Effect Size:
+    - convert a z-score into the effect size:
+        - **r=Z/√N̅** 
 
 ---
 
