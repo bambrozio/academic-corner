@@ -1028,4 +1028,45 @@ Exercise for this week
 Datasets used (regression.sav, survey.dat, Field-BDI-Non-Parametric.dat, experim.dat)
 ```
 
-(WIP)
+(Review class)
+
+## Lecture 5 - 17/10/2018
+> Comparing More Than Two Groups. </br>
+Comparing non-numerical variables
+
+- Source of the class:
+    - Statistics and Data Analysis, Peck, Olsen and Devore; 
+    - Discovering Statistics Using IBM SPSS, Andy Field;
+    - Understanding Basic Statistics, Brase and Brase;
+    - SPSS Survival Manual, Julie Pallant
+
+```
+File bullying.dat (69.664 KB)
+File diet.dat (573 B)
+File experim.dat (3.964 KB)
+File L5 - Differences More than Two.pptx (1.88 MB)
+File PSI-Lecture5.html (738.271 KB)
+File PSI-Lecture5.Rmd (6.816 KB)
+File survey.dat (192.817 KB)
+File youthcohort.dat (3.185 MB)
+This week we will be using the following R packages:
+
+library(psych)library(semTools)library(stats)library(ggplot2)library(FSA)library(userfriendlyscience) library(gmodels)
+
+Attached to this page are :
+
+Lecture Notes for this week
+Markdown file plus html output for R used in the lecture
+Datasets used.
+```
+
+- Comparison of more than 2 samples:
+    - **ANOVA** (**AN**alysis **O**f **VA**riance)
+
+| | Independent Samples | Related Samples |
+| :---: | :---: | :---: |
+| Interval measures/ parametric | ANOVA* | Repeated** Measures ANOVA |
+| Ordinal/ non-parametric | Kruskall-Wallis | Freidman |
+> \* multiple different groups of participants </br>
+\*\* multiple same participants measured at multiple different points
+
