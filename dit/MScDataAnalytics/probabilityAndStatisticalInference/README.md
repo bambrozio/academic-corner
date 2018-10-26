@@ -1040,6 +1040,7 @@ Comparing non-numerical variables
     - Understanding Basic Statistics, Brase and Brase;
     - SPSS Survival Manual, Julie Pallant
 
+
 ```
 File bullying.dat (69.664 KB)
 File diet.dat (573 B)
@@ -1060,6 +1061,7 @@ Markdown file plus html output for R used in the lecture
 Datasets used.
 ```
 
+
 - Comparison of more than 2 samples:
     - **ANOVA** (**AN**alysis **O**f **VA**riance)
 
@@ -1067,6 +1069,173 @@ Datasets used.
 | :---: | :---: | :---: |
 | Interval measures/ parametric | ANOVA* | Repeated** Measures ANOVA |
 | Ordinal/ non-parametric | Kruskall-Wallis | Freidman |
+
 > \* multiple different groups of participants </br>
 \*\* multiple same participants measured at multiple different points
 
+- Still compares the differences in means between groups but it uses the variance of data to “decide” if means are different
+    - Really is ANOVASMD (Analysis of variance to see if means are different)
+- If the observed differences (btw variances of the groups) are a lot bigger than what you'd expect by chance, you have statistical significance. 
+- **Factors:** the overall ‘things’ being compared (e.g. age, task, score)
+- **Levels:** the elements of the factor (young v old and naming v reading aloud)
+- F- statistic or F-ratio
+    - Magnitude of the difference between the different conditions
+        - Similar to z or t-score as it compares the amount of systematic variance in the data to the amount of unsystematic variance. 
+    - It is the ratio of the experimental effect to the individual differences in performance.
+    - Less than 1, it must represent a non-significant event (so you always want a **F-ratio greater than 1**)
+    - Degrees of freedom – depends on the number of factors and the number of levels
+
+- ANOVA tests for one overall effect only
+    - Omnibus test 
+- There is a need for post-hoc testing 
+    - ANOVA can tell you if there is an effect but not where
+- To test for significance
+    - obtained F-ratio is compared against maximum value one would expect to get by chance alone in an F-distribution with the same degrees of freedom. 
+    - p-value associated with F is probability that differences between groups could occur by chance if null-hypothesis is correct 
+> Reporting convention: F= 65.58, df= 4,45, p< .001 
+
+- F Distribution
+    - curve is skewed to the right.
+    - There is a different curve for each set of degrees of freedom (dfs)
+    - *F statistic* is greater than or equal to zero.
+    - As the degrees of freedom for the numerator and for the denominator get larger, the curve approximates the normal.
+
+- What Does ANOVA Tell us?
+    - Null Hypothesis:
+        - Like a t-test, ANOVA tests the null hypothesis that the means of the different groups are the same.
+    - Alternate Hypothesis:
+        - The means differ.
+    - ANOVA is an Omnibus test
+        - It tests for an overall difference between groups.
+        - It tells us that the group means are different.
+        - It doesn’t tell us exactly which means differ.
+
+- Eg: One-way Between-Groups ANOVA
+    > *see [PSI-Lecture5.Rmd](./w5/PSI-Lecture5.Rmd)*
+
+    - *Question:* Is there a difference in optimism scores for young, middle-aged and old participants?
+    - *Need:* One independent variable with three or more levels (age category) (agegp3)
+    One continuous variable (optimism scores) (totopt)
+    *Non-parametric equivalent*: **Kruskal-Wallis Test**
+- One-way ANOVA will tell us whether there are significant differences in optimism scores (toptim) across the three groups (agegp3)
+    - Tell us if there is a difference but not where the difference is
+        - need to conduct post-hoc tests after ANOVA to find it
+            - Homocedascticity – Tukey’s honestly significant difference (HSD) post hoc test (Eg.: TukeyHSD(...))
+            - Otherwise use Games-Howell 
+                - In R need to specify in relevant post-hoc test function
+    - Eg in IR:
+    ```
+    one.way <- oneway(sdata$agegp3, y = sdata$toptim, posthoc = 'Tukey')
+    ```
+
+- Calculating the effect size
+    - eta squared = sum of squares between groups/total sum of squares (from our ANOVA output (rounded up))
+    - Guidelines on effect size: `0.01=small`, `0.06=moderate`, `0.14=large`
+- Reporting results eg: 
+    - *A one-way between-groups analysis of variance was conducted to explore the impact of age on levels of optimism, as measured by the Life orientation Test (LOT). Participants were divided into three groups according to their age (Group 1: 29 yrs or less; Group 2: 30 to 44 yrs; Group 3: 45yrs and above). There was a statistically significant difference at the p < .05 level in LOT scores for the three age groups: F(2, 432)=4.6, p=.01. Despite reaching statistical significance, the actual difference in mean scores between groups was quite small. The effect size, calculated using eta squared was .02. Post-hoc comparisons using the Tukey HSD test indicated that the mean score for Group 1 (M=21.36, SD=4.55) was statistically different to Group 3 (M=22.96, SD=4.49). Group 2 (M=22.10, SD=4.15) did not differ significantly from either Group 1 or 3.*
+
+- Bonferroni Correction
+    - corrects/adjusts the p value by dividing the original α-value by the number of analyses on the dependent variable.
+        - needed as conducting multiple analyses between groups on the same dependent variable can inflate the chance of a **Type I error**: `Incorrectly rejecting the null hypothesis`
+
+- Kruskal–Wallis test – Non Parametric 
+    - non-parametric counterpart of the one-way independent ANOVA (analysis of variance).
+    - It is based on ranked data.
+    - The sum of ranks for each group is denoted by Ri (where i is used to denote the particular group).
+- ![Kruskal-Wallis](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/kruskalWallisFormula.png)
+    - Eg.: Question: Are there any differences between pupils of different ethnicity in England and Wales in relation to the grades they achieved in GCSE Maths?
+    - See youthcohort.dat analysis at [PSI-Lecture5.Rmd](./w5/PSI-Lecture5.Rmd)
+        - H0: There is no difference
+        - HA: There is a difference
+
+
+- Friedman’s ANOVA
+    - Non-parametric test for differences between several related groups 
+    - Used for testing differences between conditions when:
+        - There are more than two conditions 
+        - The same participants have been used in all conditions (each case contributes several scores to the data). 
+    - If you have violated some assumption of parametric tests then this test can be a useful way around the problem.
+    - it is based on ranked data.
+    - Once the sum of ranks has been calculated for each group, the test statistic, Fr, is calculated as:
+- ![Theory of Friedman’s ANOVA](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/TheoryOfFriedmanANOVA.png)
+    - Eg.: Does the ‘andikins’ diet work?
+        - See diet.dat analysis at [PSI-Lecture5.Rmd](./w5/PSI-Lecture5.Rmd)
+
+- Comparing Nominal Values
+    - When two variables are independent, there is no relationship between them. 
+    - See bullying.dat analysis at [PSI-Lecture5.Rmd](./w5/PSI-Lecture5.Rmd)
+    - Question: Is there a difference between boys and girls in terms of whether they have been bullied at school?
+        - H0:  There is no difference
+        - HA: There is a difference
+
+- Chi-square Test
+    - We are comparing observed values to expected values according to a specific hypothesis (null hypothesis)
+    - The null hypothesis for this test states that the proportions (the distribution across categories) are the same for all of the populations
+    - Views the data as two (or more) separate samples representing the different populations being compared
+        - The same variable is measured for each sample by classifying individual subjects into categories of the variable.  
+        - The data are presented in a matrix with the different samples defining the rows and the categories of the variable defining the columns.
+        - The data, called observed frequencies, simply show how many individuals from the sample are in each cell of the matrix.  
+    - A chi-square statistic is computed to measure the amount of discrepancy between the ideal sample (expected frequencies from H0) and the actual sample data (the observed frequencies).
+    - Output is a cross tabulation table
+        - See bullying.dat analysis at [PSI-Lecture5.Rmd](./w5/PSI-Lecture5.Rmd)
+
+- Yate’s Continuity Correction
+    - Also to prevent use making a Type I error
+    - When we are doing a Chi-square test we are assuming that the probability distribution of the binomial frequencies observed approximate the Chi-square distribution
+        - This is not quite correct. Yate’s correction adjusts Pearson’s Chi-square by subtracting 0.5 from each of the differences between the observed values and the expected values, which will reduce the Chi-square statistic and its associated p-value
+        - Particularly important for small data (larger datasets this can be overcome)
+        - May tend to overcorrect – make sure you reflect your research area’s perspective (some would say Yates is unnecessary even for small data). 
+- Chi Square Statistic
+    - Measures the amount of discrepancy between the ideal sample (expected frequencies from H<sub>0</sub>) and the actual sample data (the observed frequencies = f<sub>o</sub>).  
+    - A large discrepancy results in a large value for chi-square which indicates that the data do not fit the null hypothesis and the hypothesis does not hold. 
+    - For one degree of freedom
+        - The critical value associated with `p=0.05` for Chi Square is `3.84` 
+        - The critical value associated with `p=0.01` it is `6.64`
+        - Chi-square values higher than this critical value are associated with a statistically low probability that H<sub>0</sub> holds.
+- Chi-Square Test for Independence (Reporting example)
+    - *A Chi-Square test for independence (with Yates’ Continuity Correction) indicated no significant association between gender and reported experience of bullying, χ2(1,n=801)=2.30,p=.13, phi=-.056).*
+
+- Repeated Measures Categorical Variables
+    - Use McNemar’s test
+    - Matched Samples or repeated measures (pre-test/post-test)
+        - Two variables one recorded at Time 1 and one recorded at Time 2 (after an intervention)
+    - Use for categorical variables with two response options
+        - For 3 or more use Cochran’s Q-test
+    
+- Back to Hypothesis Testing
+    - Power of a Hypothesis Test
+        - power β of a hypothesis test: the probability that the test will reject the null hypothesis when there is no effect.  
+        - The power of a test depends on a variety of factors including the size of the effect and the size of the sample. 
+    - Power analysis
+        1. sample size
+        1. effect size
+        1. significance level 
+            - P(Type I error) = probability of finding an effect that is not there
+        1. power: P(Type II error) = probability of finding an effect that is there
+            - Given any three, we can determine the fourth.
+    
+---
+
+## Lecture 6 - 24/10/2018
+> Assignment class revision. </br>
+Descriptive statistics, graphs, tests
+
+```
+Module Link/Module Content/Choosing your Statistical Test (pdf)”
+```
+
+- How to choose?
+- ![howToChooseYourTest](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/howToChooseYourTest.png)
+
+- Parametric Difference Tests – Pre-Check
+    - T-test:
+        - Levene’s test
+            - Non-significant result variances homogenous in groups (var.equal=TRUE)
+            - Significant result variances heterogeneous (var.equal=FALSE)
+    - ANOVA:
+        - Bartlett’s test
+            - Non-significant result variances homogeneous in groups (Tukey post-hoc)
+            - Significant result variances heterogeneous (Games Howell post-hoc)
+
+- Outcome (Dependent) Variable
+- ![Outcome (Dependent) Variable](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/outcomeDependentVariable.png)
