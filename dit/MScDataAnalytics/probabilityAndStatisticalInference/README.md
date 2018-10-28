@@ -951,6 +951,7 @@ I will be using R markdown from now on to provide you with the R code. A guide t
 |:---:|:---:|:---:|
 | Interval measures/ parametric | Independent samples t-test* | Paired samples t-test** |
 | Ordinal/ non-parametric | Mann-Whitney U-Test | Wilcoxon test |
+
  >\* 2 different groups of participants</br>
  >\*\* 2 same participants measured at two different points
 
