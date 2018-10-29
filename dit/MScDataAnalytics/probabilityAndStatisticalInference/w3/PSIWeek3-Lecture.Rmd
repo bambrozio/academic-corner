@@ -24,7 +24,7 @@ knitr::opts_chunk$set(echo = TRUE)
 #http://spss.allenandunwin.com.s3-website-ap-southeast-2.amazonaws.com/data-files.html#.Wb0vvnWP-po
 #Results on a survey on well being
 #We need to load the file so that we can use it in R.
-survey <- read.table("survey.dat")
+survey <- read.table("~/workspace/github.com/bambrozio/academic-corner/dit/MScDataAnalytics/probabilityAndStatisticalInference/w3/survey.dat")
 #Setting the column names to be that used in the dataset
 colnames(survey) <- tolower(colnames(survey))
 
