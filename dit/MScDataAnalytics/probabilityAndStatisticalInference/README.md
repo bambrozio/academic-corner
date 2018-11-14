@@ -1062,7 +1062,6 @@ Markdown file plus html output for R used in the lecture
 Datasets used.
 ```
 
-
 - Comparison of more than 2 samples:
     - **ANOVA** (**AN**alysis **O**f **VA**riance)
 
@@ -1240,3 +1239,57 @@ Module Link/Module Content/Choosing your Statistical Test (pdf)”
 
 - Outcome (Dependent) Variable
 - ![Outcome (Dependent) Variable](https://raw.githubusercontent.com/bambrozio/academic-corner/master/dit/MScDataAnalytics/probabilityAndStatisticalInference/img/outcomeDependentVariable.png)
+
+
+## Lecture 6 - 07/11/2018 (week 8)
+> Dimension Reduction </br>
+Linear Regression
+
+- Source of the class:
+    - Field, Miles and Field Discovering Statistics Discovering Statistics with R
+
+```
+File L6 - Dimension Reduction.pptx (8.889 MB)
+File PSI-Lecture6-DimRed.html (1.934 MB)
+File PSI-Lecture6-DimRed.Rmd (4.64 KB)
+Attached to this page you will find:
+---
+File PSI-Lecture7-LinReg.html (725.91 KB)
+File L7 - Getting Started with Predictive Statistics.pptx (1.914 MB)
+File PSI-Lecture7-LinReg.Rmd (1.322 KB)
+Attached to this page are:
+```
+
+- Principal Component Analysis (PCA) and Factor Analysis
+    - Used to explore the relationship between one outcome variable and a set of independent variables (predictors)
+    - Inferential Model 
+        - Prediction: Really what we are looking at is the variance in the outcome variable and how much of the variance could be considered to be explained by the predictor variables
+            - How well a set of variables is able to predict an outcome variable
+            - Which variable in a set is the best predictor
+            - Whether a variable is still able to predict an outcome when controlling for other variables 
+        - ***y=b<sub>0</sub>+b<sub>1</sub>x<sub>1</sub>+b<sub>2</sub>+b<sub>2</sub>x<sub>2</sub>...+b<sub>n</sub>x<sub>n</sub>+…ε<sub>i</sub>***
+            - *b0* is the intercept
+                - the value of the Y variable when all Xs = 0.
+                - point at which the regression plane crosses the Y-axis (vertical).
+            - *b1* to *bn* are the regression coefficient for variable 1 to *n*
+        - Pseudo Prediction – if we use a linear equation
+            - **You must** have a sound theoretical basis for including your variables
+            - Explore the data using univariate and bivariate analysis to establish statistical evidence
+            - Only include variables that have potentially informative results or which serve as controls
+        - understand not only how your variables relate to your outcome but also to each other.
+    - Dimension reduction
+        - **strives to avoid: **Using a single score/measure from a multi-item measure in which there is great heterogeneity; or
+        - Using several scores/measures that are highly correlated or unreliable.
+        - The goal is to obtain the “right” number of scores (and it might be one).
+    - Collinearity
+        - Occurs when two or more independent variables contain strongly redundant information
+        - If variables are collinear  they are essentially measuring the same thing
+        - There is not enough distinct information in these variables for inferential statistics to operate
+        - If we conduct inferential statistics with collinear variables then the model will produce unreliable results
+        - Need to check for collinearity by examining a correlation matrix that compares your independent variables with each other.
+        - A **correlation coefficient above 0.8 suggests collinearity** might be present 
+        - Problems:
+            - You are introducing bias
+            - Over-representing a concept
+            - Increasing possibility of a Type I error (rejecting H<sub>0</sub> when H<sub>0</sub> is true)
+
