@@ -1292,4 +1292,34 @@ Attached to this page are:
             - You are introducing bias
             - Over-representing a concept
             - Increasing possibility of a Type I error (rejecting H<sub>0</sub> when H<sub>0</sub> is true)
+        - How to avoid:
+            - Delete all but one of the collinear variables from the model
+            - Combine them into an index mathematically (e.g. multiplying, adding etc.)
+            - Estimate a latent variable using an appropriate data reduction technique
+                - Factor analysis (FA)/Principal Component Analysis (PCA)
+- Dimension reduction / Factor Analysis
+    - Want to avoid two major obstacles:
+        - Using a single variable created from a multi-item measure in which there is great heterogeneity; or
+        - Using several variables that are highly correlated or unreliable.
+    - The goal is to obtain the “right” number of variables to represent a concept
+    - The basic issue is the degree of correlation among a set of items. 
+    - We want to test for clusters of variables or measures.
+    - Or to see whether different measures are tapping aspects of a common dimension.
+    - We expect to find “clumps” of items sometimes, and these are called **factors or components**.
+    - Many phenomena cannot be measured directly – no measurement scale exists
+    - To work with these latent variables we must use manifest variables and construct a measurement scale from these
+    - We are theorizing that there is a single individual concept, or a small number of concepts, which lead to different manifestations
+    - We are trying to distil the underlying concept(s) from its manifestations
+- Applicability
+    - We may be interested in creating an agreed measure that will allow us to track changes over time
+    - We may be interested in exploring particular dimensions of a concept
+    - We may, pragmatically, be interested in reducing the number of variables we need to work with in an analysis
+- Factor Analysis
+    - Exploratory: Used in early stages of research to gather information about interrelationships between variables
+    - Confirmatory: Used later in research to confirm hypotheses about the structure underlying a set of variables
+- Principal Components Analysis
+    - Used when working with a set of uncorrelated variables which it has been well established that they measure the same underlying component (s)
+
+
+
 

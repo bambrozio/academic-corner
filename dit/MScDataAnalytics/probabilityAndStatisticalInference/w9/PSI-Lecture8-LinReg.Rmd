@@ -9,6 +9,8 @@ editor_options:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+setwd("~/workspace/github.com/bambrozio/academic-corner/dit/MScDataAnalytics/probabilityAndStatisticalInference/w8/")
 ```
 
 #This is an accompaniment to Lecture 8. More on Linear Regression.
@@ -83,7 +85,9 @@ colnames(sdata) <- tolower(colnames(sdata))
 
 #Look first at partial correlation
 #First fiter out variables of interest and filter out na
+
 myvars <- c("tpcoiss", "tpstress", "toptim", "tmarlow")
+View(sdata[myvars])
 ydata <-na.omit(sdata[myvars])
 
 

@@ -148,7 +148,6 @@ library(stargazer)#For formatting outputs/tables</code></pre>
 <pre class="r"><code>#We are using our exam result dataset - regression.sav
 #Read in the file
 regression &lt;- read.spss(&quot;Regression.sav&quot;, use.value.labels=TRUE, max.value.labels=Inf, to.data.frame=TRUE)</code></pre>
-<pre><code>## re-encoding from UTF-8</code></pre>
 </div>
 <div id="first-model-normexam-predicted-by-standlrt" class="section level3">
 <h3>First Model NormExam predicted by StandLRT</h3>
@@ -277,6 +276,31 @@ anova(model2)</code></pre>
 ## Standardized Coefficients::
 ##         (Intercept) regression$standlrt regression$girlgirl 
 ##          0.00000000          0.58721413          0.08335627</code></pre>
+<pre class="r"><code>stargazer(model1, model2, type=&quot;text&quot;) #Quick model comparison</code></pre>
+<pre><code>## 
+## ===========================================================================
+##                                       Dependent variable:                  
+##                     -------------------------------------------------------
+##                                            normexam                        
+##                                 (1)                         (2)            
+## ---------------------------------------------------------------------------
+## standlrt                     0.595***                    0.591***          
+##                               (0.013)                     (0.013)          
+##                                                                            
+## girlgirl                                                 0.170***          
+##                                                           (0.026)          
+##                                                                            
+## Constant                      -0.001                     -0.103***         
+##                               (0.013)                     (0.020)          
+##                                                                            
+## ---------------------------------------------------------------------------
+## Observations                   4,059                       4,059           
+## R2                             0.350                       0.357           
+## Adjusted R2                    0.350                       0.357           
+## Residual Std. Error      0.805 (df = 4057)           0.801 (df = 4056)     
+## F Statistic         2,185.011*** (df = 1; 4057) 1,125.857*** (df = 2; 4056)
+## ===========================================================================
+## Note:                                           *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
 </div>
 </div>
 

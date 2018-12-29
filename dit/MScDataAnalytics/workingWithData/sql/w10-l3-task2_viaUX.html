@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='UTF8'>
+  
+  <title>Responsive Table</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <style>
+  * { 
+    margin: 0; 
+    padding: 0; 
+  }
+  body { 
+    font: 14px/1.4 Georgia, Serif; 
+  }
+  
+  /* 
+  Generic Styling, for Desktops/Laptops 
+  */
+  table { 
+    width: 100%; 
+    border-collapse: collapse; 
+  }
+  /* Zebra striping */
+  tr:nth-of-type(odd) { 
+    background: #eee; 
+  }
+  th { 
+    background: #333; 
+    color: white; 
+    font-weight: bold; 
+  }
+  td, th { 
+    padding: 6px; 
+    border: 1px solid #9B9B9B; 
+    text-align: left; 
+  }
+  @media 
+  only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px)  {
+    table, thead, tbody, th, td, tr { display: block; }
+    thead tr { position: absolute;top: -9999px;left: -9999px;}
+    tr { border: 1px solid #9B9B9B; }
+    td { border: none;border-bottom: 1px solid #9B9B9B; position: relative;padding-left: 50%; }
+    
+    td:before { position: absolute;top: 6px;left: 6px;width: 45%; padding-right: 10px; white-space: nowrap;}
+    
+    /*
+    Label the data
+    */
+td:nth-of-type(0):before { content: "EMPNO"; }
+td:nth-of-type(1):before { content: "ENAME"; }
+td:nth-of-type(2):before { content: "JOB"; }
+td:nth-of-type(3):before { content: "MGR"; }
+td:nth-of-type(4):before { content: "HIREDATE"; }
+td:nth-of-type(5):before { content: "SAL"; }
+td:nth-of-type(6):before { content: "COMM"; }
+td:nth-of-type(7):before { content: "DEPTNO"; }
+  }
+  
+  /* Smartphones (portrait and landscape) ----------- */
+  @media only screen
+  and (min-device-width : 320px)
+  and (max-device-width : 480px) {
+    body { 
+      padding: 0; 
+      margin: 0; 
+      width: 320px; }
+    }
+  
+  /* iPads (portrait and landscape) ----------- */
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    body { 
+      width: 495px; 
+    }
+  }
+  
+  </style>
+  <!--<![endif]-->
+<script type="text/javascript">
+
+lsearch = function(){
+  //this.term = document.getElementById('S').value.toUpperCase();
+  var s = document.getElementById('search').value.toLowerCase();
+  rows = document.getElementById('data').getElementsByTagName('TR');
+  for(var i=0;i<rows.length;i++){
+    if (s =="" ){
+      rows[i].style.display ='';
+    } else if ( rows[i].innerText.toLowerCase().indexOf(s) != -1 ) {
+      rows[i].style.display ='';
+    } else {
+      rows[i].style.display ='none';
+    }
+  }
+  this.time = false;
+}
+
+</script>
+</head>
+
+<body>
+<div><input type="text" size="30" maxlength="1000" value="" id="search" onkeyup="lsearch();" /><input type="button" value="Go" onclick="lsearch();"/> </div>
+<table><thead><tr>	<th>EMPNO</th>
+	<th>ENAME</th>
+	<th>JOB</th>
+	<th>MGR</th>
+	<th>HIREDATE</th>
+	<th>SAL</th>
+	<th>COMM</th>
+	<th>DEPTNO</th>
+</tr></thead>
+<tbody id="data">
+
+	<tr>
+<td align="right">7369</td>
+<td>SMITH</td>
+<td>CLERK</td>
+<td align="right">7902</td>
+<td>17-DEC-80</td>
+<td align="right">800</td>
+<td align="right">&nbsp;</td>
+<td align="right">20</td>
+	</tr>
+	<tr>
+<td align="right">7499</td>
+<td>ALLEN</td>
+<td>SALESMAN</td>
+<td align="right">7698</td>
+<td>20-FEB-81</td>
+<td align="right">1600</td>
+<td align="right">300</td>
+<td align="right">30</td>
+	</tr>
+	<tr>
+<td align="right">7521</td>
+<td>WARD</td>
+<td>SALESMAN</td>
+<td align="right">7698</td>
+<td>22-FEB-81</td>
+<td align="right">1250</td>
+<td align="right">500</td>
+<td align="right">30</td>
+	</tr>
+	<tr>
+<td align="right">7566</td>
+<td>JONES</td>
+<td>MANAGER</td>
+<td align="right">7839</td>
+<td>02-APR-81</td>
+<td align="right">2975</td>
+<td align="right">&nbsp;</td>
+<td align="right">20</td>
+	</tr>
+	<tr>
+<td align="right">7654</td>
+<td>MARTIN</td>
+<td>SALESMAN</td>
+<td align="right">7698</td>
+<td>28-SEP-81</td>
+<td align="right">1250</td>
+<td align="right">1400</td>
+<td align="right">30</td>
+	</tr>
+	<tr>
+<td align="right">7698</td>
+<td>BLAKE</td>
+<td>MANAGER</td>
+<td align="right">7839</td>
+<td>01-MAY-81</td>
+<td align="right">2850</td>
+<td align="right">&nbsp;</td>
+<td align="right">30</td>
+	</tr>
+	<tr>
+<td align="right">7782</td>
+<td>CLARK</td>
+<td>MANAGER</td>
+<td align="right">7839</td>
+<td>09-JUN-81</td>
+<td align="right">2450</td>
+<td align="right">&nbsp;</td>
+<td align="right">10</td>
+	</tr>
+	<tr>
+<td align="right">7788</td>
+<td>SCOTT</td>
+<td>ANALYST</td>
+<td align="right">7566</td>
+<td>09-DEC-82</td>
+<td align="right">3000</td>
+<td align="right">&nbsp;</td>
+<td align="right">20</td>
+	</tr>
+	<tr>
+<td align="right">7839</td>
+<td>KING</td>
+<td>PRESIDENT</td>
+<td align="right">&nbsp;</td>
+<td>17-NOV-81</td>
+<td align="right">5000</td>
+<td align="right">&nbsp;</td>
+<td align="right">10</td>
+	</tr>
+	<tr>
+<td align="right">7844</td>
+<td>TURNER</td>
+<td>SALESMAN</td>
+<td align="right">7698</td>
+<td>08-SEP-81</td>
+<td align="right">1500</td>
+<td align="right">0</td>
+<td align="right">30</td>
+	</tr>
+	<tr>
+<td align="right">7876</td>
+<td>ADAMS</td>
+<td>CLERK</td>
+<td align="right">7788</td>
+<td>12-JAN-83</td>
+<td align="right">1100</td>
+<td align="right">&nbsp;</td>
+<td align="right">20</td>
+	</tr>
+	<tr>
+<td align="right">7900</td>
+<td>JAMES</td>
+<td>CLERK</td>
+<td align="right">7698</td>
+<td>03-DEC-81</td>
+<td align="right">950</td>
+<td align="right">&nbsp;</td>
+<td align="right">30</td>
+	</tr>
+	<tr>
+<td align="right">7902</td>
+<td>FORD</td>
+<td>ANALYST</td>
+<td align="right">7566</td>
+<td>03-DEC-81</td>
+<td align="right">3000</td>
+<td align="right">&nbsp;</td>
+<td align="right">20</td>
+	</tr>
+	<tr>
+<td align="right">7934</td>
+<td>MILLER</td>
+<td>CLERK</td>
+<td align="right">7782</td>
+<td>23-JAN-82</td>
+<td align="right">1300</td>
+<td align="right">&nbsp;</td>
+<td align="right">10</td>
+	</tr>
+</tbody></table><!-- SQL:
+SELECT /*html*/* FROM emp_copy--></body></html>
