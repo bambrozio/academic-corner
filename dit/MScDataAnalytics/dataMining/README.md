@@ -4,7 +4,7 @@
 ## Lecture 1 - 18/09/2018
 
 - Data Mining:
-    - Dataprocessingusingsophisticateddatasearchcapabilitiesandstatisticalalgorithmstodiscoverpatternsandcorrelationsinlarge preexisting databases; a way to discover new meaning in data.
+    - Data processing using sophisticated data search capabilities and statistical algorithms to discover patterns and correlations in large preexisting databases; a way to discover new meaning in data.
     - The process of extracting patterns from data. It is commonly used in a wide range of profiling practices, such as marketing, surveillance, fraud detection and scientific discovery.
     - A technique for searching large-scale databases for patterns.
     - The process of identifying and extracting patterns from data, particularly from very large and/or complex sets of data.
@@ -17,7 +17,8 @@
 - Data Mining (Methods + Applications)
     - Looks at defining the business question being investigated, what data is related to that question, understanding that data, identifying appropriate techniques to use (eg. ML), analysing the results generated to apply domain knowledge, being able to related this back to the business, understanding how the results/models etc can be incorporated into the business processes, and monitor & updating the processes based on their performance on live data.
         - Looking to solve business problems
-        - Combining many different technologies • Requires the human brain
+        - Combining many different technologies 
+        - Requires the human brain
         - Business understanding
         - How findings relate to business
     
