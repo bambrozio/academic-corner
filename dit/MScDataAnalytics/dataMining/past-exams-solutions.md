@@ -1,4 +1,4 @@
-(a) Explain the following terms, clearly distinguishing the differences between them, in relation to data analytics,
+Explain the following terms, clearly distinguishing the differences between them, in relation to data analytics,
 data mining and machine learning:
 • Descriptive Analytics
 • Predictive Analytics
@@ -16,10 +16,35 @@ Predictive analytics is a form of advanced analytics that uses both new and hist
 Prescriptive analytics is the area of business analytics (BA) dedicated to finding the best course of action for a given situation. It's related to both descriptive and predictive analytics. It seeks to determine the best solution or outcome among various choices, given the known parameters. It can also suggest decision options for how to take advantage of a future opportunity or mitigate a future risk, and illustrate the implications of each decision option.
 ```
 
-(b) When investigating data you need to look at data at many different levels. For each of the following, explain
+When investigating data you need to look at data at many different levels. For each of the following, explain
 what information you would be looking at, what are the typical issues and how you would address the issues.
 § Attribute data
 § Related data across attributes
 § Record level data
 Illustrate your answers with example data issues that exists in the following table.
+
+```
+Data Understanding is the stage II of CRISP-DM. Here's where pretty much all data investigation is conducted and addressed. It has 4 main sub-items: 
+- Describe Data: Describe the data that has been acquired including its format, its quantity, the identities of the fields and any other surface features which have been discovered. Evaluate whether the data acquired satisfies your requirements.
+- Explore Data: 
+    - Distribution of key attributes
+    - Relationships between pairs or small numbers of attributes
+    - Results of simple aggregations
+    - Properties of significant sub-populations
+    - Simple statistical analyses
+- Verify Data Quality 
+    - Is the data complete?
+    - Is it correct, or does it contain errors and, if there are errors, how common are they?
+    - Are there missing values in the data? If so, how are they represented, where do they occur, and how common are they?
+- Data Quality Report.
+List the results of the data quality verification. If quality problems exist, suggest possible solutions. Solutions to data quality problems generally depend heavily on both data and business knowledge
+```
+
+Explain how the Random Forests algorithm works for both the building of the model and the scoring of the
+data.
+```
+Random Forest is a supervised learning algorithm. It creates a forest and makes it random. The "forest" it builds, is an ensemble of Decision Trees, most of the time trained with the "bagging" method. The general idea of the bagging method is that a combination of learning models increases the overall result.
+To say it in simple words: Random forest builds multiple decision trees and merges them together to get a more accurate and stable prediction.
+One big advantage of random forest is, that it can be used for both classification and regression problems, which form the majority of current machine learning systems.
+```
 
