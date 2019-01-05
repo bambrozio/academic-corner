@@ -1,5 +1,3 @@
-# Class 1
-
 ## Data Mining.
 It's the non-trivial extraction of previously unknown and potentially useful information from data. Exploration & Analysis, by automatic, or semi-automatic means, of large quantities of data in order to discover meaningful patterns.
 
@@ -28,10 +26,6 @@ Predictive analytics is a form of advanced analytics that uses both new and hist
 
 ## Prescriptive Analytics
 Prescriptive analytics is the area of business analytics (BA) dedicated to finding the best course of action for a given situation. It's related to both descriptive and predictive analytics. It seeks to determine the best solution or outcome among various choices, given the known parameters. It can also suggest decision options for how to take advantage of a future opportunity or mitigate a future risk, and illustrate the implications of each decision option.
-
----
-
-# Class 2
 
 ## Data Mining Life Cycle
 
