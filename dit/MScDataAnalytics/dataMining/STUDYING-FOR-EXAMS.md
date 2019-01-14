@@ -82,6 +82,28 @@ CRISP-DM stands for cross-industry process for data mining. The CRISP-DM methodo
 
 ## Clustering
 Clustering is a Machine Learning technique that involves the grouping of data points. Given a set of data points, we can use a clustering algorithm to classify each data point into a specific group. In theory, data points that are in the same group should have similar properties and/or features, while data points in different groups should have highly dissimilar properties and/or features. Clustering is a method of unsupervised learning and is a common technique for statistical data analysis used in many fields. Cluster analysis itself is not one specific algorithm, but the general task to be solved. It can be achieved by various algorithms that differ significantly in their understanding of what constitutes a cluster and how to efficiently find them. 
+
+### Types of clusters: 
+####  Well-Separated Clusters:
+§ A cluster is a set of points such that any point in a cluster is closer (or more similar) to every other point in the cluster than to any point not in the cluster. 
+
+#### Center-based
+§ A cluster is a set of objects such that an object in a cluster is closer (moresimilar) to the “center” of a cluster, than to the center of any other cluster
+§ The center of a cluster is often a centroid, the average of all the points in the cluster, or a medoid, the most “representative” point of a cluster 
+
+#### Contiguous Cluster (Nearest neighbor or Transitive)
+§ A cluster is a set of points such that a point in a cluster is closer (or more similar) to one or more other points in the cluster than to any point not in the cluster.
+
+#### Density-based
+§ A cluster is a dense region of points, which is separated by low-density regions, from other regions of high density.
+§ Used when the clusters are irregular or intertwined, and when noise and
+outliers are present. 
+
+#### Shared Property or Conceptual Clusters
+§ Finds clusters that share some common property or represent a particular concept. 
+
+
+
 5 popular clustering algorithms:
 - K-Means Clustering
     - advantages: pretty fast, easy to implement. Linear complexity O(n). (Simply computes the distances between points and group centers)
