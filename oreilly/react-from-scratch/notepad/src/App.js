@@ -1,28 +1,67 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Intro from './Intro';
+import Header from './components/Header';
+import Grid from './components/Grid'
+import Form from './components/Form'
 
-const user = {
-  name: 'Bruno',
+const styles = {
+  textAlign: 'center',
+  margin: 0,
+  padding: 0,
+  fontFamily: 'sans-serif',
 }
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      notes: [
+        {
+          id: 1,
+          title: 'Add course notes',
+          details: 'Need to add more details to the course'
+        },
+        {
+          id: 2,
+          title: 'Use unreal or unity',
+          details: 'another detail for id 2 component'
+        },
+        {
+          id: 3,
+          title: 'List of gifts',
+          details: 'bla bla bla lba'
+        }
+      ],
+      name: 'Bruno',
+      currentTitle: '',
+      currentDetails: '',
+    }
+  }
+
+  handleChange(event) {
+    const name = event.target.name;
+    const value = event.target.value;
+
+    this.setState({
+      [name]: value
+    });
+  }
+
+  handleSubmit(event) {
+    alert(`Your note ${this.state.currentTitle} has been added!`);
+    event.preventDefault();
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <Intro user={user} />
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className={styles}>
+        <Header name={this.state.name} />
+        <Form 
+        currentTitle={this.state.currentTitle}
+        currentDetails={this.state.currentDetails}
+        handleChange={this.state.handleChange}
+        handleSubmit={this.state.handleSubmit}
+        />
+        <Grid notes={this.state.notes} />
       </div>
     );
   }
