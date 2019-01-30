@@ -29,18 +29,16 @@ plt.plot(a1[0, :], a1[1, :])
 
 #5)
 #%%
+fs = 100
 F = 10 
 amp = 0.5
-t = np.arange(-1, 1+1/fs, 1/fs)     # seconds
+t = np.arange(-1, 1+1/fs, 1/fs)
 phase = np.pi
 y = amp*np.cos(2*np.pi*F*t+phase)
-
-#t = np.arange(-1,1+1/fs,1/fs)
-#print( 'size of t: ', t.size)
-#print('t:', t)
-
 plt.figure()
 plt.plot(t, y)
-# units here are seconds on the x−axis as we are # plotting the signal over time
-#plt.xlabel(time(s), fontsize=16)
+
+#6)
+xslice = x[x.size//2+1::]
+plt.plot(t[x.size//2+1::], xslice, 'o−r')
 #%%
