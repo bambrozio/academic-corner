@@ -7,7 +7,7 @@ Created on Mon Feb  4 20:05:29 2019
 """
 
 import pandas as pd
-df = pd.read_csv('github.com/bambrozio/academic-corner/dit/MScDataAnalytics/machineLearning/w2/iris.csv')
+df = pd.read_csv('/Users/bambrozi/workspace/github.com/bambrozio/academic-corner/dit/MScDataAnalytics/machineLearning/w2/iris.csv')
 from sklearn.decomposition import PCA
 pca = PCA()
 orig = df.drop('Species', axis = 'columns')
