@@ -1,0 +1,18 @@
+---
+title: "Data Visualisation - CA2"
+author: "Bruno Ambrozio"
+date: "28/11/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+1. Select, Clean and Wrangle a Dataset
+Dataset: https://www.kaggle.com/c/recruit-restaurant-visitor-forecasting/data
+
+2. Decide on a story (user story)
+3. Using R, create three visualisations
+4. Show previous iterations or alternatives
+
