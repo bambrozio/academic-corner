@@ -8,12 +8,19 @@ public class SumReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
 
     public void reduce(Text key, Iterable<IntWritable> values, Context context)
             throws IOException, InterruptedException {
+
+        System.out.println(String.format("Kicking-of SumReducer for [values=%s, context=%s]", values, context));
+        System.err.println(String.format("Kicking-of SumReducer for [values=%s, context=%s]", values, context));
+
+
         int wordCount = 0;
         System.out.println(" In Reducer now!");
         for (IntWritable value : values) {
             wordCount += value.get();
         }
         context.write(key, new IntWritable(wordCount));
+
+        System.out.println(String.format("SumReducer done! [wordCount=%s]", wordCount));
     }
 
 }

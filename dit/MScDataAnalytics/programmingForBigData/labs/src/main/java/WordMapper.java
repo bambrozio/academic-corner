@@ -9,6 +9,10 @@ public class WordMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
     public void map(LongWritable key, Text value, Context context)
             throws IOException, InterruptedException {
 
+        System.out.println(String.format("Kicking-of WordMapper for [key=%s, value=%s, context=%s]", key, value, context));
+        System.err.println(String.format("Kicking-of WordMapper for [key=%s, value=%s, context=%s]", key, value, context));
+
+
         String s = value.toString();
 
         for (String word : s.split("\\W+")) {
@@ -16,6 +20,8 @@ public class WordMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
                 context.write(new Text(word), new IntWritable(1));
             }
         }
+
+        System.out.println("WordMapper done!");
     }
 }
 

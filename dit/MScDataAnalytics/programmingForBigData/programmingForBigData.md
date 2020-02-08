@@ -44,13 +44,13 @@ NOTES (From helm chart status):
 
 ## Labs
 
-### WordCount
+### WordCount & AVG Word length grouped by first character of the word
 - [Instructions here (pdf)](https://secureservercdn.net/160.153.138.74/umw.129.myftpupload.com/wp-content/uploads/2020/02/Lab4-Creating_First_MR_Process.pdf)
 
 #### Resolution steps
 1. Build up the Java JAR as per instructions.
 
-1. Download [shakespeare.tar.gz](https://github.com/swinton/Cloudera-Hadoop-for-Developers/blob/master/training_materials/developer/data/shakespeare.tar.gz)
+1. Download [shakespeare](https://www.dropbox.com/s/m84tzbn0489khb6/shakespeare.tar.gz?dl=0) or [shakespeare.tar.gz](https://github.com/swinton/Cloudera-Hadoop-for-Developers/blob/master/training_materials/developer/data/shakespeare.tar.gz)
 
 
 1. Sent both the downloaded tar.gz and the generated .jar to a container
@@ -183,3 +183,16 @@ youthful        4
 zealous 1
 ```
 
+1. AVG resolution, see WordCalc.java, AvgWordMapper.java and AvgReducer. Example of results:
+```
+A	3.1134538152610443
+B	3.6926952141057936
+C	6.320224719101123
+D	5.245614035087719
+E	4.8
+F	3.831168831168831
+...
+w	4.540181691125087
+y	3.927350427350427
+z	7.0
+```
