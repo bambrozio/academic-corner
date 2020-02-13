@@ -5,11 +5,14 @@ Classes: http://b-tierney.com/msc-prog-big-data/
 1. Deploying on Kubernetes ([Docker Desktop](https://www.docker.com/products/docker-desktop)).
 1. [Hadoop Helm chart](https://github.com/helm/charts/tree/master/stable/hadoop)
 ```
+cd /Users/bambrozi/workspace/github.com/bambrozio/helm
+
 helm install --name hadoop \
 --set persistence.nameNode.enabled=true \
 --set persistence.nameNode.storageClass=hostpath \
---set per sistence.dataNode.enabled=true \
---set persistence.dataNode.storageClass=hostpath stable/hadoop
+--set persistence.dataNode.enabled=true \
+--set persistence.dataNode.storageClass=hostpath \
+stable/hadoop
 ```
 
 NOTES (From helm chart status):
@@ -68,8 +71,8 @@ $ kubectl cp build/libs/labs-1.0-SNAPSHOT.jar hadoop-hadoop-hdfs-nn-0:/root/buck
 $ kubectl exec -n default -it hadoop-hadoop-hdfs-nn-0 -- bash
 # cd ~/bucket/
 # tar -xzvf shakespeare.tar.gz
-# hdfs fs -mkdir -p /user/root
-# hadoop fs -put shakespeare shakespeare
+# hdfs dfs -mkdir -p /user/root
+# hadoop dfs -put shakespeare shakespeare
 ```
 
 1. Execute the application:
