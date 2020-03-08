@@ -103,13 +103,13 @@ $ kubectl port-forward svc/hadoop-hadoop-yarn-ui 8088:8088
 ```
 $ kubectl port-forward svc/hadoop-hadoop-hdfs-nn 50070:50070
 $ kubectl port-forward svc/hadoop-hadoop-hdfs-dn 50075:50075
+$ kubectl port-forward hadoop-hadoop-yarn-nm-1 8042:8042
 ```
 
 1. Access the URL and navigate to `Utilities > Browser File System`, then: `user > root` to see/download the output files.
 ```
 http://localhost:50070/
 ```
-
 1. Resultset sample:
 ```
 $ tail ~/Downloads/part-r-00000 
